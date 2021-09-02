@@ -1,4 +1,4 @@
-package Network;
+package com.Network;
 
 public class Cookie {
     private String name;
@@ -11,7 +11,7 @@ public class Cookie {
 
     @Override
     public String toString() {
-        return "Network.Cookie {\n" +
+        return "com.Network.Cookie {\n" +
                 "       name: " + name + '\n' +
                 "       value: " + value + '\n' +
                 "    }\n";

@@ -1,4 +1,4 @@
-package Counter;
+package com.Counter;
 
 public class Counter {
     private static Counter instance;

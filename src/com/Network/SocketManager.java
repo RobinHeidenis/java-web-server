@@ -1,8 +1,8 @@
-package Network;
+package com.Network;
 
-import Pages.FileReader;
-import Terminal.Terminal;
-import Terminal.Util;
+import com.Pages.FileReader;
+import com.Terminal.Terminal;
+import com.Terminal.Util;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -61,18 +61,16 @@ public class SocketManager {
         sendData("HTTP/1.0 200 OK\r\nSet-Cookie: " + name + "=" + value + "\r\nContent-Type: text/html\r\nContent-Length: " + Util.getLength(text) + "\r\n\r\n" + text);
     }
 
-    public void sendPage() {
-        sendPage("");
+    public void sendPage(String location) {
+        sendPage(location, "");
     }
 
-    public void sendPage(String param) {
-        String page = SocketManager.getInstance().getRequest().getPath().equals("/") ? "/index" : SocketManager.getInstance().getRequest().getPath();
-        SocketManager.getInstance().sendText(FileReader.tryGetPageTextWithParam(page, param));
+    public void sendPage(String location, String param) {
+        SocketManager.getInstance().sendText(FileReader.tryGetPageTextWithParam("/" + location, param));
     }
 
-    public void sendPageWithCookie(String param, String name, String value) {
-        String page = SocketManager.getInstance().getRequest().getPath().equals("/") ? "/index" : SocketManager.getInstance().getRequest().getPath();
-        SocketManager.getInstance().sendTextWithCookie(FileReader.tryGetPageTextWithParam(page, param), name, value);
+    public void sendPageWithCookie(String location, String param, String name, String value) {
+        SocketManager.getInstance().sendTextWithCookie(FileReader.tryGetPageTextWithParam("/" + location, param), name, value);
     }
 
     public void closeConnection() {

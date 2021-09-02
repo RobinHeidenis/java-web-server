@@ -1,4 +1,4 @@
-package Network;
+package com.Network;
 
 public class QueryParameter {
     private String name;

@@ -1,4 +1,4 @@
-package Terminal;
+package com.Terminal;
 
 public class Util {
     public static int getLength(String text) {

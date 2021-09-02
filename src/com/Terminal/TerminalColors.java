@@ -1,4 +1,4 @@
-package Terminal;
+package com.Terminal;
 
 public class TerminalColors {
     public static final String ANSI_RESET = "\u001B[0m";

@@ -1,4 +1,4 @@
-package Pages;
+package com.Pages;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -6,7 +6,7 @@ import java.nio.file.Paths;
 
 public class FileReader {
     public static String getPageText(String page) throws IOException {
-        String uri = System.getProperty("user.dir") + "/src/Pages/" + page + ".html";
+        String uri = System.getProperty("user.dir") + "/src/com.Pages/" + page + ".html";
         return String.join("", Files.readAllLines(Paths.get(uri)));
     }
 

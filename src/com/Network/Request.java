@@ -1,4 +1,4 @@
-package Network;
+package com.Network;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -49,7 +49,7 @@ public class Request {
 
     @Override
     public String toString() {
-        return "Network.Request {\n" +
+        return "com.Network.Request {\n" +
                 "path: " + path + "\n" +
                 "queryString: " + queryString + "\n" +
                 "host: " + host + "\n" +

@@ -1,4 +1,4 @@
-package Terminal;
+package com.Terminal;
 
 public class Terminal {
     public static void info(String text) {
