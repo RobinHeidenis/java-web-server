@@ -57,12 +57,21 @@ public class SocketManager {
         sendData("HTTP/1.0 200 OK\r\nContent-Type: text/html\r\nContent-Length: " + Util.getLength(text) + "\r\n\r\n" + text);
     }
 
+    public void sendPublicResource(String text, String fileType) {
+        sendData("HTTP/1.0 200 OK\r\nContent-Type: text/" + fileType + "\r\nContent-Length: " + Util.getLength(text) + "\r\n\r\n" + text);
+    }
+
     public void sendTextWithCookie(String text, String name, String value) {
         sendData("HTTP/1.0 200 OK\r\nSet-Cookie: " + name + "=" + value + "\r\nContent-Type: text/html\r\nContent-Length: " + Util.getLength(text) + "\r\n\r\n" + text);
     }
 
     public void sendPage(String location) {
         sendPage(location, "");
+    }
+
+    public void sendPublicResource(String url) throws IOException {
+        String extension = url.substring(url.lastIndexOf('.') + 1);
+        SocketManager.getInstance().sendPublicResource(FileReader.getPublicResource(url), extension);
     }
 
     public void sendPage(String location, String param) {

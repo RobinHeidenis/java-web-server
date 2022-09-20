@@ -6,7 +6,7 @@ import java.nio.file.Paths;
 
 public class FileReader {
     public static String getPageText(String page) throws IOException {
-        String uri = System.getProperty("user.dir") + "/src/com.Pages/" + page + ".html";
+        String uri = System.getProperty("user.dir") + "/src/com/Pages/" + page + ".html";
         return String.join("", Files.readAllLines(Paths.get(uri)));
     }
 
@@ -22,5 +22,10 @@ public class FileReader {
     public static String tryGetPageTextWithParam(String page, String param) {
         String text = tryGetPageText(page);
         return text.replace("{{$param}}", param);
+    }
+
+    public static String getPublicResource(String resource) throws IOException {
+        String uri = System.getProperty("user.dir") + "/public" + resource;
+        return String.join("", Files.readAllLines(Paths.get(uri)));
     }
 }
