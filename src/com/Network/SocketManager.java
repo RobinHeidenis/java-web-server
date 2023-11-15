@@ -27,7 +27,7 @@ public class SocketManager {
     public void init() {
         try {
             server = new ServerSocket(8080);
-            Terminal.info("Server started");
+            Terminal.info("Server started on port " + 8080);
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -3,6 +3,7 @@ package com;
 import com.Annotations.RouteProcessor;
 import com.Network.SocketManager;
 import com.Pages.PageManager;
+import com.Terminal.Terminal;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
@@ -10,7 +11,7 @@ import java.lang.reflect.Method;
 import java.util.HashMap;
 
 public class Main {
-    public static void main(String[] args) throws IOException, InvocationTargetException, IllegalAccessException {
+    public static void main(String[] args) {
         SocketManager socketManager = SocketManager.getInstance();
         PageManager pageManager = new PageManager();
         Routes routesClass = new Routes();
